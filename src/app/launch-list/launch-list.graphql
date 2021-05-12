@@ -1,0 +1,16 @@
+query pastLaunchesList($limit: Int!) {
+  launchesPast(limit: $limit) {
+    mission_name
+    launch_date_local
+    links {
+      article_link
+      flickr_images
+    }
+    rocket {
+      rocket_name
+    }
+    launch_site {
+      site_name_long
+    }
+  }
+}

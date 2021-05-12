@@ -1,0 +1,10 @@
+<ng-container *ngIf="pastLaunches$ | async as pastLaunches">
+  <main>
+    <section class="launches">
+      <app-launch-card
+        *ngFor="let launch of pastLaunches"
+        [launch]="launch"
+      ></app-launch-card>
+    </section>
+  </main>
+</ng-container>

@@ -1,0 +1,30 @@
+<div class="launch">
+  <div class="launch__image">
+    <img
+      [src]="launch.links.flickr_images[0]"
+      alt=""
+      *ngIf="launch.links.flickr_images?.length; else noImage"
+    />
+    <ng-template #noImage>
+      <span class="no-image">No image available</span>
+    </ng-template>
+  </div>
+  <div class="launch__description">
+    <div class="launch__description__field">
+      <small>Mission name</small>
+      <h3>{{ launch.mission_name }}</h3>
+    </div>
+    <div class="launch__description__field">
+      <small>Rocket name</small>
+      <h3>{{ launch.rocket.rocket_name }}</h3>
+    </div>
+    <div class="launch__description__field">
+      <small>Launch site</small>
+      <h3>{{ launch.launch_site.site_name_long }}</h3>
+    </div>
+    <div class="launch__description__field">
+      <small>Launch date</small>
+      <h3>{{ launch.launch_date_local | date: "medium" }}</h3>
+    </div>
+  </div>
+</div>
